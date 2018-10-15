@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://java.sun.com/xml/ns/javaee" xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_3_0.xsd" id="WebApp_ID" version="3.0">
+
+  <display-name>DBConnectivity_JSPJPA</display-name>
+
+  <welcome-file-list>
+
+    <welcome-file>http://localhost:9002/DBConnectivity_JSPJPA/faces/addAccount.jsp</welcome-file>
+
+  </welcome-file-list>
+
+  <session-config>
+
+    <session-timeout>7</session-timeout>
+
+  </session-config>
+
+  <error-page>
+
+    <error-code>404</error-code>
+
+    <location>/faces/errorPage.jsp</location>
+
+  </error-page>
+
+ 
+
+  <error-page>
+
+    <exception-type>javax.faces.application.ViewExpiredException</exception-type>
+
+    <location>/WEB-INF/errorpages/expired.jsp</location>
+
+</error-page>
+ <error-page>
+
+    <error-code>500</error-code>
+
+    <location>/WEB-INF/errorpages/genera.jsp</location>
+
+  </error-page>
+
+
+  <servlet>
+
+    <servlet-name>Faces Servlet</servlet-name>
+
+    <servlet-class>javax.faces.webapp.FacesServlet</servlet-class>
+
+    <load-on-startup>1</load-on-startup>
+
+  </servlet>
+
+  <servlet-mapping>
+
+    <servlet-name>Faces Servlet</servlet-name>
+
+    <url-pattern>/faces/*</url-pattern>
+
+  </servlet-mapping>
+
+</web-app>

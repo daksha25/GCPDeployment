@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:h="http://java.sun.com/jsf/html" xmlns:ui="http://java.sun.com/jsf/facelets" xmlns:f="http://java.sun.com/jsf/core">
+
+<head>
+ <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1"/>
+<title>Infosys Devops Bank: Account Statement</title>
+<link href="style.css" media="screen" rel="stylesheet"/>
+</head>
+<body>
+      <ui:composition template="Common Template.jsp">
+      <ui:define name="Right Division">
+      <h:form id="form_accntstatement">
+         <div id="divright" style="float:right; width:81%;height:480px;overflow: auto;" class="appfont">
+
+                  <div style="height:40%;border:#3D7AC3;border-style:solid;width:99%;border-radius:15px;" class="appfont">
+                       <b id="filterstext" >Filters:</b><br/>
+                       <p id="enterdatetext" style="font-size:medium;font-weight:normal;">Enter date in MM/DD/YYYY Format</p>    
+                       <center>                   
+                         <h:outputText id="startdatetext"  value="Start Date:"></h:outputText>    
+                         <h:inputText id="startdateinput" value="#{transactionHistoryBean.startDate}" maxlength="10" converterMessage="Enter Start date in MM/DD/YYYY Format">
+                         <f:convertDateTime type="date" pattern="MM/dd/yyyy"></f:convertDateTime>
+                         </h:inputText>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                         <h:outputText id="enddatetext" value="End Date:"></h:outputText>    
+                         <h:inputText id="enddateinput" value="#{transactionHistoryBean.endDate}" maxlength="10" converterMessage="Enter End date in MM/DD/YYYY Format">
+                         <f:convertDateTime type="date" pattern="MM/dd/yyyy"></f:convertDateTime>
+                         </h:inputText><br/><br/>
+                         <h:commandButton id="searchbtn" value="Search" action="#{transactionHistoryBean.accountStatementSearch}" type="submit" styleClass="submitButton" ></h:commandButton>&nbsp;&nbsp;
+				         <h:commandButton id="resetbtn" value="Reset" action="#{transactionHistoryBean.searchReset}" type="reset" styleClass="submitButton"></h:commandButton><br/><br/> 
+                         
+                         <h:outputText id="transactiontypetext" value="Transaction Type:"></h:outputText>
+						<h:selectOneMenu id="transactiontypeinput" value="#{transactionHistoryBean.type}">
+						<f:selectItem id="transactiontype_all" itemLabel="All" itemValue="*"></f:selectItem>
+						<f:selectItem id="transactiontype_cr" itemLabel="Credit" itemValue="Cr"></f:selectItem>
+						<f:selectItem id="transactiontype_dr" itemLabel="Debit" itemValue="Dr"></f:selectItem>
+						</h:selectOneMenu>&nbsp;&nbsp;&nbsp;&nbsp;
+						
+			            <h:commandButton id="applyfiltertext" value="Apply Filter" action="#{transactionHistoryBean.applyTypefilter}" type="submit" styleClass="submitButton"></h:commandButton>
+					</center>
+					<h:messages></h:messages>
+				  </div><br/>   
+                        
+                       
+                       
+				  <b><h:outputText id="transactionhistext"  value="Transaction History:" rendered="#{transactionHistoryBean.number eq 4 or transactionHistoryBean.number eq 5 or transactionHistoryBean.number eq 6}"></h:outputText></b><br/>
+            <center>
+            
+            <h:outputText id="transactionmsg" value="#{transactionHistoryBean.message}" rendered="#{transactionHistoryBean.number eq 3}"></h:outputText>
+					<h:dataTable id="transdb" border="1" value="#{transactionHistoryBean.transactionList}" var="row" headerClass="tableHeading" rowClasses="tableRows" styleClass="table" cellspacing="0" cellpadding="10" rendered="#{transactionHistoryBean.number eq 4 or transactionHistoryBean.number eq 5 or transactionHistoryBean.number eq 6}">
+						<h:column id="column1">
+							<f:facet name="header">
+								<h:outputText id="transidtext" value="Transaction ID"></h:outputText>
+							</f:facet>
+							<h:outputText id="transidinput" value="#{row.transactionId}"></h:outputText>
+						</h:column>
+						<h:column id="column2">
+							<f:facet name="header">
+								<h:outputText id="transfromtext" value="Transferred From"></h:outputText>
+							</f:facet>
+							<h:outputText id="transfrominput" value="#{row.sourceAccountNo}"></h:outputText>
+						</h:column>
+						
+						<h:column id="column3">
+							<f:facet name="header">
+								<h:outputText id="transtotext" value="Transferred To"></h:outputText>
+							</f:facet>
+							<h:outputText id="transtoinput" value="#{row.targetAccountNo}"></h:outputText>
+						</h:column>
+						<h:column id="column4">
+							<f:facet name="header">
+								<h:outputText id="transamnttext"  value="Transferred Amount"></h:outputText>
+							</f:facet>
+							<h:outputText  id="transamntinput" value="#{row.amountTransferred}"></h:outputText>
+						</h:column>
+						<h:column id="column5">
+							<f:facet name="header">
+								<h:outputText id="timestamptext" value="Timestamp"></h:outputText>
+							</f:facet>
+							<h:outputText id="timestampinput" value="#{row.transactionTimeStamp}"></h:outputText>
+						</h:column>
+						<h:column id="column6">
+							<f:facet name="header">
+								<h:outputText id="typetext" value="Type"></h:outputText>
+							</f:facet>
+							<h:outputText id="typeinput" value="#{row.type}"></h:outputText>
+							</h:column>
+							</h:dataTable>
+
+				      </center></div>      
+
+ 
+            </h:form>
+     </ui:define>
+      </ui:composition>
+</body>
+</html>

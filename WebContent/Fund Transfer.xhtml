@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:h="http://java.sun.com/jsf/html" xmlns:ui="http://java.sun.com/jsf/facelets" xmlns:f="http://java.sun.com/jsf/core">
+<head>
+ <script type="text/javascript">
+          history.forward();
+ </script>
+ 
+ 
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1"/>
+<title>Infosys Devops Bank:Fund Transfer</title>
+<link href="style.css" media="screen" rel="stylesheet"/>
+</head>
+<body>
+      <ui:composition template="Common Template.jsp">
+     <ui:define name="Right Division">
+     <h:form id="form_fundtransfer">
+         <div id="divright" style="float:right; width:82%;height:10px;" class="appfont">
+          
+         <br/><br/><br/><br/>
+         <b><h:outputText id="withintext" style="right:60%;position:absolute;" value="Within Bank:"></h:outputText></b><br/><br/>
+         <center>     
+		    <h:commandButton id="withinbtn" value="Transfer Fund" action="#{transactionHistoryBean.populateAccountNoWithin}"  styleClass="buttonErrorRepository" style="background:#3D7AC3;border: #3D7AC3;right=65%"></h:commandButton>
+		    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+		    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+		    <h:commandButton id="Link_payee_within" value="Add Payee" action="#{addPayeeBean.navigateAaddPayeewithin}" styleClass="buttonErrorRepository" style="background:#3D7AC3;border: #3D7AC3"></h:commandButton><br/> 
+		 </center>
+        
+         <br/><br/><br/><br/><br/>       
+         <b><h:outputText id="outsidetext" style="right:60%;position:absolute;" value="Outside Bank:"></h:outputText></b><br/><br/>
+         <center>
+             <h:commandButton id="outsidebtn" value="Transfer Fund" action="#{transactionHistoryBean.populateAccountNoOutside}" styleClass="buttonErrorRepository" style="background:#3D7AC3;border: #3D7AC3"></h:commandButton>           
+			 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+			 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+			 <h:commandButton id="Link_payee_outside" value="Add Payee" action="#{addPayeeBean.navigateAaddPayeeother}" styleClass="buttonErrorRepository" style="background:#3D7AC3;border: #3D7AC3"></h:commandButton>
+		 </center>
+		 </div>
+			 </h:form>
+     </ui:define>
+      </ui:composition>
+</body>
+</html>

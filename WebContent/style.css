@@ -1,0 +1,341 @@
+html {
+  max-height: 1024px;
+  margin: 0 auto;
+  position: relative; /* Fix for absolute positioning */
+  overflow-y: scroll; 
+}
+
+body {
+	background-color:#FFFFFF;
+	width:100%;
+	height:100%;
+/*	font-family: monospace;  */
+	overflow: visible;
+	margin: 0px;
+    padding: 0px;
+}
+.successmsg{
+	color:green;
+}
+.errormsg{
+	color:red;
+}
+
+.errormsg_login{
+	color:white;
+	font-size:large;
+}
+
+p {
+	font-weight: bold;
+	color:#333385;
+/*	font-family: monospace;  */
+	font-size:130%;
+}
+
+h3 {
+	font-weight: bold;
+	color:#333385;
+	font-size:xx-large;
+	position:relative;
+}
+
+
+h2 {
+	font-weight: bold;
+
+	font-size:large;
+	color:#333385;
+	right:75%;
+	
+}
+   
+html {
+	height:100%;
+	}
+	
+body {
+	height:100%; margin:0; padding:0;
+	}
+
+
+appfont{
+	
+	font-family: sans-serif;
+	font-stretch: extra-condensed;
+}
+
+.RightCorner{
+   font-size:20px;
+   position:absolute;
+   right:7%;
+   font-size:large;
+   top:100px;
+}
+
+.RightCorner1{
+   position:absolute;
+   right: 8%;
+   top:95px;
+   width:30px;
+   height:3%;
+}
+
+
+.button{
+    width: 90%;
+    height:35px;
+    background:#3D7AC3;
+    left:20px;
+    text-align: center;
+    vertical-align: bottom;
+    color: white;
+    font-weight: bold;
+    border: #3D7AC3;
+    cursor: pointer;
+    border-collapse: collapse;
+    border-bottom-left-radius:8px;
+    border-bottom-right-radius:8px;
+    border-top-left-radius:8px;
+    border-top-right-radius:8px;
+    font-size:1vw;
+    
+}
+
+.buttonErrorRepository{
+    width: 105px;
+    height:35px;
+    background:#BDD4FF;
+    left:20px;
+    text-align: center;
+    color: black;
+    font-weight: bold;
+    border: #BDD4FF;
+    border-style: solid;
+    border-width: 2px;
+    border-collapse: collapse;
+    border-bottom-left-radius:8px;
+    border-bottom-right-radius:8px;
+    border-top-left-radius:8px;
+    border-top-right-radius:8px;
+}
+
+.submitButton{
+    width: 100px;
+    height:30px;
+    background:#BDD4FF;
+    left:100; 
+    text-align: center;
+    vertical-align: bottom;
+    color: black;
+    font-weight: bold;
+    border: #BDD4FF;
+    border-bottom-left-radius:8px;
+    border-bottom-right-radius:8px;
+    border-top-left-radius:8px;
+    border-top-right-radius:8px;
+}
+
+.table{
+	top:100px;
+	border-collapse: collapse;
+    font-weight: normal;
+	cellpadding:5; 
+	cellspacing:5;
+	border:bold 1px black;
+	text-align: center;
+	
+}
+
+.tableHeading{
+	background:#000080;
+	color:#FFFFFF;
+	font-size: 1.2vw;
+}
+
+.tableRows{
+	background:#FFFFFF;
+	color:#000000;
+	font-size: 1.2vw;
+}
+
+.centered{
+position: absolute;
+top: 0;
+bottom: 0;
+margin:auto;
+}
+
+.upfile{
+  content: 'Select some files';
+  display: inline-block;
+  background: -webkit-linear-gradient(top, #f9f9f9, #e3e3e3);
+  border: 1px solid #999;
+  border-radius: 3px;
+  padding: 5px 8px;
+  outline: none;
+  white-space: nowrap;
+  -webkit-user-select: none;
+  cursor: pointer;
+  text-shadow: 1px 1px #fff;
+  font-weight: 700;
+  font-size: 10pt;
+}
+
+.Right{
+	position:absolute;
+	right:9%;
+	top:30%;
+	width:25%;
+	height:50%;
+}
+.Right1{
+	position:absolute;
+	right:100%;
+	top:40%;
+	width:100px;
+	height:100px;
+} 
+.Right2{
+	position: absolute;
+	right:30%;
+	top:30%;
+	width:25%;
+	height:50%;
+}
+
+h4 {
+    color:#333385;
+	position:relative;
+	font-size:large;
+	
+}
+
+
+
+.Left{
+	position: absolute;
+	right:76%;
+	top:35%;
+	height:8%;
+	width:5%;
+	
+}
+.Left1{
+	
+	position: absolute;
+	right:2%;
+
+	
+}
+
+.Left2{
+	
+	position: absolute;
+	right:70%;
+	top:75%;
+	
+	
+}
+
+
+
+.imghome {
+	background-image:url('savingsaccount_small.jpg');
+	height:35%;
+	width:65%;
+
+} 
+
+.respBgImageLogin {
+    width: 100%;
+    height: 400px;
+    background-image: url('l13.jpg');
+   background-size: 100% 100%;
+}
+
+#divright1 {
+	width: 100%;
+    height: 480px;
+    background-image: url('homeNewUpd2.jpg');
+    background-size: 100% 100%;
+}
+
+.responsive-shrink { 
+        max-width :100%; 
+        height: auto; 
+    }
+
+.respBgImageSignUp {
+    width: 100%;
+    height: 400px;
+    background-image: url('sinup bg.jpg');
+   background-size: 100% 100%;
+}
+
+.panelgrid{
+	padding: 12px 20px;
+    margin: 5% 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+    width:40;
+}
+/* <!--
+.blinker_text{
+  -webkit-animation: blinker .75s linear infinite;
+  -moz-animation: blinker .75s linear infinite;
+  -ms-animation: blinker .75s linear infinite;
+  -o-animation: blinker .75s linear infinite;
+   animation: blinker .75s linear infinite;
+} 
+@-webkit-keyframes blinker {
+  0% { opacity: 1; }
+  50% { opacity: 1; }
+  50.01% { opacity: 0; }
+  100% { opacity: 0; }
+}
+@-moz-keyframes blinker {
+  0% { opacity: 1; }
+  50% { opacity: 1; }
+  50.01% { opacity: 0; }
+  100% { opacity: 0; }
+}
+@-ms-keyframes blinker {
+  0% { opacity: 1; }
+  50% { opacity: 1; }
+  50.01% { opacity: 0; }
+  100% { opacity: 0; }
+}
+@-o-keyframes blinker {
+  0% { opacity: 1; }
+  50% { opacity: 1; }
+  50.01% { opacity: 0; }
+  100% { opacity: 0; }
+}
+@keyframes blinker {
+  0% { opacity: 1; }
+  50% { opacity: 1; }
+  50.01% { opacity: 0; }
+  100% { opacity: 0; }
+}
+@end
+
+-->  */
+
+/* .text:HOVER {
+	color: #ff5050
+} */
+
+
+
+
+
+
+
+
+
+
+
+

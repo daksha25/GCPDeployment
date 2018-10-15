@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:h="http://java.sun.com/jsf/html" xmlns:ui="http://java.sun.com/jsf/facelets">
+ 
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1"/>
+
+</head>
+<body>
+<ui:composition>
+       <h:form id="leftPanelBtn">
+       
+       <div id="divleft" style="float:left;width:17%;background:#B4CEFF;height:480px;border:#d9d9d9;border-style:solid;border-radius:20px;" class="appfont">
+		    <br/><br/><center>
+			<h:commandButton id="homebtn" value="Account Details" action="#{accountInfoBeans.getPerticularAccInfo}" styleClass="button"></h:commandButton><br/><br/>
+            <h:commandButton id="acntstmntbtn" value="Account Statement" action="#{transactionHistoryBean.accountStatement}" styleClass="button"></h:commandButton><br/><br/>
+			<h:commandButton id="fundstansfbtn" value="Fund Transfer" action="#{transactionHistoryBean.resetTransactionFields}" styleClass="button"></h:commandButton><br/><br/>
+			<h:commandButton id="servicesbtn" value="Services" action="Services.xhtml?faces-redirect=true" styleClass="button"></h:commandButton><br/><br/>
+			<h:commandButton id="offersbtn" value="Offers" action="Offers.xhtml?faces-redirect=true" styleClass="button"></h:commandButton><br/><br/>
+			<h:commandButton id="linkServiceRequestHomePage" value="Service Request" action="#{serviceRequstBean.reSet}" styleClass="button"></h:commandButton><br/><br/>
+			<h:commandButton id="contactbtn" value="Contact" action="ContactDetail.xhtml?faces-redirect=true" styleClass="button"></h:commandButton>
+			</center>
+			</div>
+			
+			</h:form>
+</ui:composition>
+
+
+</body>
+</html>

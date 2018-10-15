@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:h="http://java.sun.com/jsf/html" xmlns:ui="http://java.sun.com/jsf/facelets" xmlns:f="http://java.sun.com/jsf/core">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1"/>
+<title>Infosys Devops Bank:Outside bank</title>
+<link href="style.css" media="screen" rel="stylesheet"/>
+</head>
+<body>
+      <ui:composition template="Common Template.jsp">
+     <ui:define name="Right Division">
+<h:form id="form_addpayee">
+      
+        <div id="AddPayeeDivision">  
+         <h:graphicImage id="AddpayyeeImage" value="money_transfer.png" height="50%" width="30%"></h:graphicImage>
+         
+        <center>
+               
+         
+          <h:panelGrid border="0" columns="2" rendered="#{addPayeeBean.number1 eq 1}">
+               <h:outputText id="payyeenametext" value="Payee Account Name:"></h:outputText>
+               <h:inputText id="payyeenameinput" value="#{addPayeeBean.payeeName}" maxlength="15"></h:inputText>
+              
+               <h:outputText id="payyeeAccountNumbertext" value="Payee Account Number:"></h:outputText>
+               <h:inputText id="PayeeAccountNumberInput" value="#{addPayeeBean.payeeAccNum}" maxlength="8" converterMessage="Payee Account Number should be numeric."></h:inputText>
+               
+               <h:outputText id="payyeeNickNameText" value="Payee Nick Name:"></h:outputText>
+               <h:inputText id="payyeeNickNameInput" value="#{addPayeeBean.payeeNickName}" maxlength="10"></h:inputText>
+          </h:panelGrid><br/>
+          <h:commandButton id="payyeeBtn" value="Add payee" action="#{addPayeeBean.addPayeewithin}" rendered="#{addPayeeBean.number1 eq 1}"></h:commandButton><br/>
+          
+          <h:outputText id="payyeeOutputMessage" value="#{addPayeeBean.message}" rendered="#{addPayeeBean.number1 eq 1}"></h:outputText>
+          
+          </center>
+          
+          
+          
+          
+          
+          <center>
+          <h:panelGrid border="0" columns="2" rendered="#{addPayeeBean.number1 eq 2}">
+               <h:outputText id="payyeeOutsideText" value="Payee Account Name:"></h:outputText>
+               <h:inputText id="payyeeOutsideInput" value="#{addPayeeBean.payeeName}" maxlength="15"></h:inputText>
+              
+               <h:outputText id="payyeeOutsideAccountNumberText" value="Payee Account Number:"></h:outputText>
+               <h:inputText id="payyeeOutsideAccountNumberInput" value="#{addPayeeBean.payeeAccNum}" maxlength="8" converterMessage="Payee Account Number should be numeric."></h:inputText>
+               
+               <h:outputText id="payyeeOutsideNickNameText" value="Payee Nick Name:"></h:outputText>
+               <h:inputText id="payyeeOutsideNickNameInput" value="#{addPayeeBean.payeeNickName}" maxlength="10"></h:inputText>
+               
+               <h:outputText id="payyeeOutsideIFSCText" value="Bank IFSC:"></h:outputText>
+               <h:inputText id="payyeeOutsideIFSCInput" value="#{addPayeeBean.ifsc}" maxlength="11"></h:inputText>
+          </h:panelGrid><br/>
+          <h:commandButton id="payyeeOutsideBtn" value="Add payee" action="#{addPayeeBean.addPayeeOthersBnak}" rendered="#{addPayeeBean.number1 eq 2}"></h:commandButton><br/>
+          <h:outputText id="payyeeOutsideMessage" value="#{addPayeeBean.message}" rendered="#{addPayeeBean.number1 eq 2}"></h:outputText>
+          <h:messages></h:messages>
+          </center>
+          
+          </div>
+          
+          
+</h:form>
+</ui:define>
+      </ui:composition>
+</body>
+</html>

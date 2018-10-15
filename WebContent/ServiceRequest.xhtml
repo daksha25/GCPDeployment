@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:h="http://java.sun.com/jsf/html" xmlns:ui="http://java.sun.com/jsf/facelets" xmlns:f="http://java.sun.com/jsf/core">
+
+<head>
+ 
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1"/>
+<title>Infosys Devops Bank:Service Request</title>
+<link href="style.css" media="screen" rel="stylesheet"/>
+</head>
+<body background="grungeblue.jpg">
+<f:view>
+       <ui:composition template="Common Template.jsp">
+         <ui:define name="Right Division">
+         <div id="completeForm" style="overflow:auto;">
+           <h:form id="form_request">
+             <center> 
+                <h3 style="font-size:1.5vw;right:25%" class="appfont" id="welcometext">Service Request</h3>
+		     </center><br/>
+        
+             <center>
+                <div id="divcentre" style="centered;" class="appfont">
+                  <br/><br/>
+                     <h:panelGrid id="panelgridlogin" border="0" columns="2">
+                        <h:outputText style="font-size:1.2vw;" id="fecilitiestext" value="Facility:"></h:outputText>
+                           <h:selectOneMenu id="dropdownFacelities" value = "#{serviceRequstBean.facilities}">
+                             <f:selectItem itemLabel = "--Select--"/>
+                             <f:selectItem itemValue = "mobile" itemLabel = "Mobile Number Update"/>
+                             <f:selectItem itemValue = "checkbook" itemLabel = "New Checkbook Request"/>
+                             <f:selectItem itemValue = "updateProfile" itemLabel = "Update of Profile"/>
+                             <f:selectItem itemValue = "email" itemLabel = "EmailId"/>
+                             <f:selectItem itemValue = "postalAddress" itemLabel = "Change of Postal Address"/>
+                           </h:selectOneMenu>
+
+                       <h:outputText style="font-size:1.2vw;" id="descriptiontext" value="Description:"></h:outputText>
+                       <h:inputTextarea id="descriptionss" value="#{serviceRequstBean.description}"></h:inputTextarea>
+                     </h:panelGrid>
+                     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                     <br/><br/>
+                     <h:commandButton id="submitbtn" value="Submit" type="submit" action="#{serviceRequstBean.submitRequest}" style="background:#3D7AC3;border: #3D7AC3" styleClass="buttonErrorRepository"></h:commandButton>&nbsp;&nbsp;
+                     <br/>
+                     <h:outputText  id="StatusResult" value="#{serviceRequstBean.message}"></h:outputText>
+                 </div>
+              </center>
+           </h:form>
+          <h:form id="form_request1">
+            <center> 
+               <h3 style="font-size:1.5vw;right:22%" class="appfont" id="welcometext">Track Your Request</h3>
+		    </center><br/><br/>
+            <center>
+               <div id="divcentre" style="centered;" class="appfont">
+                  <h:panelGrid id="panelgridlogin" border="0" columns="2">
+                    <h:outputText style="font-size:1.2vw;" id="fecilitiestext" value="Request Id:"></h:outputText>
+                    <h:selectOneMenu id="requestIdinput"  value="#{serviceRequstBean.trackingId}">
+			        <f:selectItems id="requestIdinputSelect" itemLabel="--Select--"></f:selectItems>
+			        <f:selectItems id="requestIdinputlist" value="#{serviceRequstBean.allRequestIds}"></f:selectItems>
+			        </h:selectOneMenu>
+                    <br/><br/>
+                    <h:commandButton id="submitbtn" value="Submit" type="submit" action="#{serviceRequstBean.trackRequest}" style="background:#3D7AC3;border: #3D7AC3" styleClass="buttonErrorRepository"></h:commandButton>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br/>
+                    <br/><br/>
+                    <h:outputText id="StatusResult1" value="#{serviceRequstBean.status}"></h:outputText>
+                    <br/><br/><br/>
+                  </h:panelGrid>			
+                </div>
+            
+            </center>
+       
+           </h:form>
+           </div>
+      </ui:define>
+</ui:composition>
+
+</f:view>
+</body>
+</html>

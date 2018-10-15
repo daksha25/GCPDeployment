@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:h="http://java.sun.com/jsf/html" xmlns:ui="http://java.sun.com/jsf/facelets" xmlns:f="http://java.sun.com/jsf/core">
+<head>
+ <script type="text/javascript">
+          history.forward();
+ </script>
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1"/>
+<title>Infosys Devops Bank:Within Bank</title>
+<link href="style.css" media="screen" rel="stylesheet"/>
+</head>
+<body>
+      <ui:composition template="Common Template.jsp">
+     <ui:define name="Right Division">
+     <h:form id="form_withinbank">
+     <div id="divright" style="float:right; width:82%;height:480px;" class="appfont">
+             <center>
+			<h:panelGrid border="0" columns="2" styleClass="panelgrid">
+			    <h:outputText id="fromaccnttext" value="From Account"></h:outputText>
+			    <h:selectOneMenu id="fromaccntinput"  value="#{transactionHistoryBean.sourceAccountNo}">
+			    <f:selectItems id="fromaccntlist" value="#{transactionHistoryBean.sourceAccNoList}"></f:selectItems>
+			    </h:selectOneMenu>
+			    
+			    <h:outputText id="toaccnttext" value="To Payee Account"></h:outputText>
+				<h:selectOneMenu id="toaccntinput"  value="#{transactionHistoryBean.payeeDetails}">
+			    <f:selectItems id="toaccntlist" value="#{transactionHistoryBean.payeeList}"></f:selectItems>
+			    </h:selectOneMenu>
+				
+				<h:outputText id="transamnttext"  value="Transfer Amount"></h:outputText>
+				<h:inputText id="transamntinput" value="#{transactionHistoryBean.amountTransferred}" maxlength="7" converterMessage="Please enter Numaric digits only">
+				</h:inputText>
+				
+				<h:outputText id="transremarkstext"  value="Transaction Remarks"></h:outputText>
+				<h:inputText id="transremarksinput"  value="#{transactionHistoryBean.transactionRemarks}" maxlength="30"></h:inputText>
+				
+				<h:outputText id="addPayeeLinktext" value="Click here for Add Payee"></h:outputText>
+				<h:commandLink id="Link_payee_within" value="Add Payee" action="#{addPayeeBean.navigateAaddPayeewithin}"></h:commandLink>
+			</h:panelGrid><br/><br/>
+			
+			<h:commandButton id="transferfundbtn" value="Transfer Fund" action="#{transactionHistoryBean.ftWithinBank}" type="submit" styleClass="buttonErrorRepository" style="background:#3D7AC3;border: #3D7AC3"></h:commandButton>
+		</center><br/><br/>
+		<h:messages></h:messages>
+		<h:outputText id="transhismsg"  value="#{transactionHistoryBean.message}" rendered="#{transactionHistoryBean.number eq 1}"></h:outputText>       
+		</div>
+     </h:form>
+     </ui:define>
+      </ui:composition>
+</body>
+</html>

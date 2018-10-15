@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:h="http://java.sun.com/jsf/html" xmlns:ui="http://java.sun.com/jsf/facelets" xmlns:f="http://java.sun.com/jsf/core">
+<head>
+ 
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1"/>
+<title>Infosys Devops Bank:Home</title>
+<link href="style.css" media="screen" rel="stylesheet"/>
+</head>
+<body>
+      <ui:composition template="Common Template.jsp">
+     <ui:define name="Right Division">
+     <h:form id="form_home">
+         <div id="divright1" style="float:right; width:81%;height:480px;overflow:auto;">
+            <center> 
+            
+                 
+            <h3 style="font-size:1.9vw;" class="appfont" id="welcometext"  > Welcome to Infy DevOps Bank's Net banking service</h3>
+		         
+		           </center><br/>
+		         <b>&nbsp;&nbsp;<h:outputText value="Hello" id="hellotext" style="font-size:1.6vw;color:#333385;appfont;"> </h:outputText>&nbsp;<h:outputText value="#{loginBean.uname}" id="usernametext" style="appfont;font-size:1.6vw;color:#333385;"></h:outputText></b>,<br/><br/>
+		      
+		         
+		         &nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b> <h:outputText value="Account Details:" style="font-size:1.4vw;color:#333385;" rendered="#{accountInfoBeans.number eq 2}"></h:outputText></b><br/><br/>
+		        
+		        <center>
+		        
+		         <h:dataTable id="datatablehome" border="1" value="#{accountInfoBeans.aeList}" var="row1" headerClass="tableHeading" rowClasses="tableRows" styleClass="table" cellspacing="0" cellpadding="10" style="appfont" rendered="#{accountInfoBeans.number eq 2}">
+						<h:column id="column1">
+							<f:facet name="header">
+								<h:outputText id="accntnotext" value="Account No"></h:outputText>
+							</f:facet>
+							<h:outputText id="accnttextinput" value="#{row1.accountNo}"></h:outputText>
+						</h:column>
+						<h:column id="column2">
+							<f:facet name="header">
+								<h:outputText id="accntholnametext" value="Account Holder Name"></h:outputText>
+							</f:facet>
+							<h:outputText id="accntholnameinput" value="#{row1.name}"></h:outputText>
+						</h:column>
+						
+						<h:column id="column3">
+							<f:facet name="header">
+								<h:outputText id="accnttypetext" value="Account Type"></h:outputText>
+							</f:facet>
+							<h:outputText id="accnttypeinput" value="#{row1.accountType}"></h:outputText>
+						</h:column>
+						<h:column id="column4">
+							<f:facet name="header">
+								<h:outputText id="currentbaltext" value="Current Balance"></h:outputText>
+							</f:facet>
+							<h:outputText id="cuurentbalinput" value="#{row1.accountBalance}"></h:outputText>
+						</h:column>
+						
+						
+						
+					</h:dataTable>
+				
+					      
+			       </center>
+			       </div>
+            
+	
+   
+                
+
+                <h:messages styleClass="errormsg"></h:messages><br/>
+
+                <h:outputText value="#{loginBean.message}" rendered="#{loginBean.flag eq true}" styleClass="errormsg"></h:outputText><br/>
+     </h:form>    
+     </ui:define>
+      </ui:composition>
+</body>
+</html>

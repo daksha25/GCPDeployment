@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:h="http://java.sun.com/jsf/html" xmlns:ui="http://java.sun.com/jsf/facelets">
+ 
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1"/>
+</head>
+<body>
+      <ui:composition>
+        <h:form>
+            
+                <div style="float:up;height:144px;width:100%;">
+                <div style="height:64%; width:100%;background-color:#0000cc;border:#004d66;border-style:solid;">
+                   <center>
+                     <a href="Home.xhtml">
+                       <h:graphicImage value="Logo_for_header.png" height="30%" width="28%"></h:graphicImage>
+                     </a>
+                   </center>
+                </div>
+               <div style="height:26%; width:100%;background-color:#ccccff;border:#000000;border-style:solid;">
+                   <h:graphicImage value="logot.png" style="position:absolute;right:5.5%;font-size:large;top:15.6%;width:3%;height:4.5%;"></h:graphicImage>
+                     <h:commandLink action="#{accountInfoBeans.logout}" style="position:absolute;right:1%;top:14.5%;"><h2>Logout</h2></h:commandLink>
+               </div>
+              </div> 
+           
+        </h:form>
+      </ui:composition>
+</body>
+</html>

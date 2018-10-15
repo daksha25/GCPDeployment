@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:h="http://java.sun.com/jsf/html" xmlns:ui="http://java.sun.com/jsf/facelets" xmlns:f="http://java.sun.com/jsf/core">
+<head>
+ <script type="text/javascript">
+          history.forward();
+ </script>
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1"/>
+<title>Infosys Devops Bank:Outside bank</title>
+<link href="style.css" media="screen" rel="stylesheet"/>
+</head>
+<body>
+      <ui:composition template="Common Template.jsp">
+     <ui:define name="Right Division">
+     <h:form>
+    <div id="divright" style="float:right; width:83%;height:500px" class="appfont">
+             <center>
+			<h:panelGrid border="0" columns="2">
+			    <h:outputText id="fromaccnttext" value="From Account"></h:outputText>
+			    <h:selectOneMenu id="fromaccntinput" value="#{transactionHistoryBean.sourceAccountNo}">
+			    <f:selectItems id="fromaccntlist" value="#{transactionHistoryBean.sourceAccNoList}"></f:selectItems>
+			    </h:selectOneMenu>
+			    
+			    <h:outputText id="toaccnttext" value="To Account"></h:outputText>
+				<h:inputText id="toaccntinput" value="#{transactionHistoryBean.targetAccountNo}" maxlength="8">
+				
+				</h:inputText>
+				
+				<h:outputText id="accntholnametext" value="Account Holder Name"></h:outputText>
+				<h:inputText id="accntholnameinput" value="#{transactionHistoryBean.targetAccounteeName}" maxlength="25"></h:inputText>
+				
+				<h:outputText id="transamnttext" value="Transfer Amount"></h:outputText>
+				<h:inputText id="transamntinput" value="#{transactionHistoryBean.amountTransferred}" maxlength="9">
+				</h:inputText>
+				
+				<h:outputText id="transremarkstext" value="Transaction Remarks"></h:outputText>
+				<h:inputText id="transremarksinput" value="#{transactionHistoryBean.transactionRemarks}" maxlength="30"></h:inputText>
+				
+				<h:outputText id="ifsctext" value="IFSC"></h:outputText>
+				<h:inputText id="ifscinput" value="#{transactionHistoryBean.ifsc}" maxlength="11"></h:inputText>
+				
+				
+			</h:panelGrid><br/><br/>
+			
+			<h:commandButton id="transferfundbtn" value="Transfer Fund" action="#{transactionHistoryBean.ftoutsideBank}" type="submit" styleClass="buttonErrorRepository" style="background:#3D7AC3;border: #3D7AC3"></h:commandButton>
+		</center>
+		<h:messages></h:messages>
+
+			
+
+		<h:outputText id="transhismsg" value="#{transactionHistoryBean.message}" rendered="#{transactionHistoryBean.number eq 2}"></h:outputText>       
+		</div>
+     </h:form>
+     </ui:define>
+      </ui:composition>
+</body>
+</html>
