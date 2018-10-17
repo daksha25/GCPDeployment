@@ -1,4 +1,4 @@
-appVersion: apps/v1
+appVersion: apps/01
 kind: Deployment 
 metadata:
    name: infybankapp-deployment
@@ -10,7 +10,7 @@ spec:
 	  app: infybankapp-deployment
 	containers:
 	- name: infybankapp-deployment
-	  image: daksha25/infybankapp:v1
+	  image: daksha25/bankapp:01
 	  ports:
 	  - containerPort: 8080
 
