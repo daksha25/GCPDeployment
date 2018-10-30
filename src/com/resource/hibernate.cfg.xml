@@ -10,7 +10,7 @@
 		<!-- hibernate dialect -->
 		<property name="hibernate.dialect">org.hibernate.dialect.Oracle10gDialect</property>
 		<property name="hibernate.connection.driver_class">oracle.jdbc.driver.OracleDriver</property>
-		<property name="hibernate.connection.url">jdbc:oracle:thin:@35.200.252.206:1521:xe</property>
+		<property name="hibernate.connection.url">jdbc:oracle:thin:@35.200.191.183:1521:xe</property>
 		<property name="hibernate.connection.username">devops</property>
 		<property name="hibernate.connection.password">devops</property>
 		<property name="transaction.factory_class">org.hibernate.transaction.JDBCTransactionFactory</property>
