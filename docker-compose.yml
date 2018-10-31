@@ -1,0 +1,12 @@
+version: "3.3"
+services:
+        oracle-db:
+                image: oracle-db-image
+                container_name: oracle-db
+                volumes:
+                - ./data:/u01/app/oracle
+                ports:
+                - 1521:1521
+                - 8080:8080
+                
+                                                                                             
